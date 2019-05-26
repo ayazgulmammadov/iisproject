@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "myVMName": {
+      "value": "webvm01"
+    },
+    "myVMAdminUserName": {
+      "value": "adminuser"
+    },
+    "myVMAdminPassword": {
+      "value": "#{VMAdminPassword}#"
+    },
+    "myPublicIPDnsName": {
+      "value": "aytask6az"
+    },
+    "certThumbprint": {
+      "value": "efd1d465060f9d6072ca51674d548e6a4db0cacf"
+    },
+    "certPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/956299bb-8825-464d-a682-38b7c674bc7c/resourceGroups/AyazRG-04/providers/Microsoft.KeyVault/vaults/ayaz-keyvault"
+        },
+        "secretName": "certpassword"
+      }
+    }
+  }
+}
